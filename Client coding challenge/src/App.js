@@ -21,15 +21,21 @@ class App extends React.Component {
       method: 'GET',
       headers: {
         'session-exam-token': 'success-token',
-        "content-Type": "application/JSON"
       }
     }
-    let URL = 'localhost:8080/api/movies'
+    let URL = 'http://localhost:8080/api/movies'
 
     fetch(URL, settings)
       .then(response => {
-        this.setState({ movies: response });
+        if (response.ok) {
+          return response.json();
+      }
+      throw new Error(response.statusText);
         this.setState({errorMessage:""});
+      })
+      .then(responseJSON => {
+        console.log(responseJSON);
+        this.setState({movies:responseJSON})
       })
       .catch(err => {
         //throw new Error(err);
@@ -53,7 +59,7 @@ class App extends React.Component {
       },
       body: JSON.stringify(data),
     };
-      let URL = 'localhost:8080/api/add-movie'
+      let URL = 'http://localhost:8080/api/add-movie'
       fetch(URL, settings)
         .then(result => {
           console.log(result);
@@ -71,7 +77,8 @@ class App extends React.Component {
     return (
       <div>
         {this.state.movies.map(movie => {
-          return (<div> title = {movie.title}, year = {movie.year}, rating={movie.rating}</div>)
+          console.log(movie)
+          return (<div> title = {movie.movie_title}, year = {movie.movie_year}, rating={movie.movie_rating}</div>)
         })
         }
         {/*<div>
