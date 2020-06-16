@@ -1,6 +1,49 @@
+.movies{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
 @media(max-width: 300px){
     div{
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    span{
+        flex-wrap: nowrap;
+        margin: 10px;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+}
+@media(min-width: 300px) and (max-width: 900px){
+    div{
+        display: flex;
+        justify-content: space-evenly;
+        /*flex-wrap: wrap;*/
+        
+    }
+    span{
+        flex-wrap: nowrap;
+        margin: 10px;
+        margin-bottom: 20px;
+    }
+}
+@media(min-width: 901px){
+    div{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+    form{
+        margin: 30%;
+    }
+    span{
+        flex-wrap: nowrap;
+        margin: 10px;
     }
 }

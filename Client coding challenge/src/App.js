@@ -76,21 +76,31 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div className="movies">
         {this.state.movies.map(movie => {
           console.log(movie)
           return (<div> title = {movie.movie_title}, year = {movie.movie_year}, rating={movie.movie_rating}</div>)
         })
         }
+        </div>
+        
         {/*<div>
             title = {props.title}, year = {props.year}, rating={props.rating}
         </div>*/}
         <form onSubmit={e => this.createMovie(e)}>
+          <span>
           <label for="title">title</label>
           <input id="title" />
+          </span>
+          <span>
           <label for="year">year</label>
           <input id="year" />
+          </span>
+          <span>
           <label for="rating">rating</label>
           <input id="rating" />
+          </span>
+          
           <button type="submit">
             Create
           </button>
