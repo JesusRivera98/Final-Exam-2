@@ -1,0 +1,6 @@
+@media(max-width: 300px){
+    div{
+        display: flex;
+        justify-content: space-around;
+    }
+}

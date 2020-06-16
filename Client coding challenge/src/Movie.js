@@ -3,9 +3,7 @@ import React from 'react';
 function Movie( props ){
     return(
         <div>
-            {/*
-                Your code goes here
-            */}
+            title = {props.title}, year = {props.year}, rating={props.rating}
         </div>
     );
 }
