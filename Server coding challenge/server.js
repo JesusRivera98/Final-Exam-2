@@ -5,6 +5,7 @@ const {Movies} = require('./models/moviedex-model');
 const jsonParser = bodyParser.json();
 const { DATABASE_URL, PORT } = require( './config' );
 const cors = require( './middleware/cors' );
+const uuid = require( 'uuid' );
 //const validateToken = require('./middleware/token-validation')
 
 const app = express();
