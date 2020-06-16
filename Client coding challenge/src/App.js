@@ -64,6 +64,7 @@ class App extends React.Component {
         .then(result => {
           console.log(result);
           this.setState({errorMessage:""});
+          window.location.reload(false);
 
         })
         .catch(err => {
